@@ -1,0 +1,7 @@
+*.pdf
+a.out
+minishell
+.vscode
+*.o
+*.h.gch
+.DS_Store
