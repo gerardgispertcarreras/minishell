@@ -3,15 +3,15 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rzhdanov <rzhdanov@student.42.fr>          +#+  +:+       +#+         #
+#    By: rzhdanov <rzhdanov <rzhdanov@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/12 22:30:35 by rzhdanov          #+#    #+#              #
-#    Updated: 2023/03/12 18:40:24 by rzhdanov         ###   ########.fr        #
+#    Updated: 2024/05/05 21:12:42 by rzhdanov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC=cc
-FLAGS=-Wall -Werror -Wextra
+FLAGS=-Wall -Werror -Wextra -I../inc
 AR=ar rcs
 SRCS = ft_atoi.c ft_bzero.c ft_calloc.c \
        	ft_isalnum.c ft_isalpha.c ft_isascii.c \
@@ -29,14 +29,13 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c \
 OBJS = $(SRCS:.c=.o)
 RM = rm -rf
 NAME = libft.a
-INCLUDES = libft.h
 BONUS_SRCS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
 		ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
 		ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
-%.o : %.c $(INCLUDES)
+%.o : %.c
 	$(CC) $(FLAGS) -c $< -o $@
 
 all: $(NAME)
