@@ -6,37 +6,52 @@
 #    By: rzhdanov <rzhdanov <rzhdanov@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/17 17:44:31 by rzhdanov          #+#    #+#              #
-#    Updated: 2024/04/21 22:00:37 by rzhdanov         ###   ########.fr        #
+#    Updated: 2024/05/12 23:03:23 by rzhdanov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = minishell
+
+SRC_DIR = src
+OBJ_DIR = obj
+LIBFT_PATH = libft
+LIBFT = $(LIBFT_PATH)/libft.a
+INCLUDES = -I./inc
+
+SRCS = $(wildcard $(SRC_DIR)/*.c)
+OBJS = $(addprefix $(OBJ_DIR)/, $(notdir $(SRCS:.c=.o)))
+
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -rf
-SRCS_DIR = src/
-OBJS_DIR = objs/
 
-SRCS = $(wildcard $(SRCS_DIR)*.c)
-OBJS = $(addprefix $(OBJS_DIR), $(notdir $(SRCS:.c=.o)))
+all : 
+	@$(MAKE) -C $(LIBFT_PATH) -s
+	@$(MAKE) $(NAME) -s
+	@echo "minishell executable is ready"
 
-all : $(OBJS_DIR) $(NAME)
+$(OBJ_DIR) :
+	mkdir -p $(OBJ_DIR)
 
-$(OBJS_DIR) :
-	mkdir -p $(OBJS_DIR)
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(LIBFT) | $(OBJ_DIR)
+	$(CC) $(CFLAGS) -c $< -o $@ $(INCLUDES)
 
-$(OBJS_DIR)%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+$(NAME) : $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJS) -lreadline -o $@ $(INCLUDES)
 
-$(NAME) : $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $@
+#$(LIBFT):
+#	$(MAKE) -C ./libft
 
 re : fclean all
 
 clean :
-	$(RM) $(OBJS_DIR)
+	$(RM) $(OBJ_DIR)
+	$(MAKE) clean -C ./libft -s
+	@echo "clean command executed"
 
 fclean : clean
 	$(RM) $(NAME)
+	$(MAKE) fclean -C ./libft -s
+	@echo "fclean command executed"
 
-.PHONY : clean fclean re all bonus
+.PHONY : clean fclean re all
