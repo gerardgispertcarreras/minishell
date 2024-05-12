@@ -3,51 +3,55 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ggispert <ggispert@student.42barcelona.    +#+  +:+       +#+         #
+#    By: rzhdanov <rzhdanov <rzhdanov@student.42    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/17 17:44:31 by rzhdanov          #+#    #+#              #
-#    Updated: 2024/05/02 15:55:40 by ggispert         ###   ########.fr        #
+#    Updated: 2024/05/12 23:03:23 by rzhdanov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = minishell
 
-SRCS_DIR = src/
-OBJS_DIR = objs/
-INC_DIR = inc/
-LIB_INCLUDES = $(INC_DIR)/libft/inc/
-LIBFT_PATH = $(INC_DIR)/Libft/
-LIBFT_NAME = ft
-LIBFT = $(LIBFT_PATH)lib$(LIBFT_NAME).a
+SRC_DIR = src
+OBJ_DIR = obj
+LIBFT_PATH = libft
+LIBFT = $(LIBFT_PATH)/libft.a
+INCLUDES = -I./inc
 
-SRC = $(addsuffix .c, ) \
-OBJS = $(SRCS:$(SRCSDIR)/%.c=$(OBJSDIR)/%.o)
+SRCS = $(wildcard $(SRC_DIR)/*.c)
+OBJS = $(addprefix $(OBJ_DIR)/, $(notdir $(SRCS:.c=.o)))
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -rf
-INCFLAGS = $(addprefix -I,$(INC_DIR) $(LIB_INCLUDES))
 
-all :
+all : 
 	@$(MAKE) -C $(LIBFT_PATH) -s
 	@$(MAKE) $(NAME) -s
+	@echo "minishell executable is ready"
 
-$(OBJS_DIR) :
-	@mkdir -p $(OBJS_DIR)
+$(OBJ_DIR) :
+	mkdir -p $(OBJ_DIR)
 
-$(OBJS_DIR)%.o: %.c
-	$(CC) $(CFLAGS) -I$(INCDIR) -c $< -o $@
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(LIBFT) | $(OBJ_DIR)
+	$(CC) $(CFLAGS) -c $< -o $@ $(INCLUDES)
 
-$(NAME) : $(OBJSDIR) $(OBJS) $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJS) -o $@
+$(NAME) : $(OBJS) $(LIBFT)
+	$(CC) $(CFLAGS) $(OBJS) -lreadline -o $@ $(INCLUDES)
 
-
-clean :
-	$(RM) $(OBJS_DIR)
-
-fclean : clean
-	$(RM) $(NAME)
+#$(LIBFT):
+#	$(MAKE) -C ./libft
 
 re : fclean all
 
-.PHONY : clean fclean re all bonus
+clean :
+	$(RM) $(OBJ_DIR)
+	$(MAKE) clean -C ./libft -s
+	@echo "clean command executed"
+
+fclean : clean
+	$(RM) $(NAME)
+	$(MAKE) fclean -C ./libft -s
+	@echo "fclean command executed"
+
+.PHONY : clean fclean re all
