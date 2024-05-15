@@ -6,7 +6,7 @@
 #    By: rzhdanov <rzhdanov@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/12 22:30:35 by rzhdanov          #+#    #+#              #
-#    Updated: 2024/05/15 11:15:49 by rzhdanov         ###   ########.fr        #
+#    Updated: 2024/05/15 11:51:34 by rzhdanov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,8 +24,8 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c \
 		ft_strjoin.c ft_strtrim.c ft_itoa.c \
 		ft_split.c ft_strmapi.c ft_striteri.c \
 		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
-		ft_putnbr_fd.c ft_ltoa.c ft_copy.c ft_char_count_in_str.c\
-		ft_free_char_array.c \
+		ft_putnbr_fd.c ft_ltoa.c ft_copy.c ft_char_count_in_str.c \
+		ft_free_char_array.c ft_char_found_in_str.c \
 
 OBJS = $(SRCS:.c=.o)
 RM = rm -rf

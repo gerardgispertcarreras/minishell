@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_char_array.c                               :+:      :+:    :+:   */
+/*   ft_char_found_in_str.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzhdanov <rzhdanov@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/15 10:15:46 by rzhdanov          #+#    #+#             */
-/*   Updated: 2024/05/15 11:20:20 by rzhdanov         ###   ########.fr       */
+/*   Created: 2024/05/15 11:20:33 by rzhdanov          #+#    #+#             */
+/*   Updated: 2024/05/15 11:51:02 by rzhdanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_free_char_array(char **array)
+char	*ft_char_found_in_str(const char *s, const char c)
 {
-	size_t	i;
+	char	*tmp;
 
-	i = 0;
-	while (array && array[i])
+	if (!s || !c)
+		return (NULL);
+	tmp = (char *) s;
+	while (*tmp)
 	{
-		free((void *) array[i]);
-		array[i] = NULL;
-		i++;
+		if (*tmp == c)
+			return ((char *)tmp);
+		tmp++;
 	}
-	free((void *) array);
-	array = NULL;
+	return (NULL);
 }
