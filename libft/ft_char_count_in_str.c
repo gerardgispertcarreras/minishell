@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_copy.c                                          :+:      :+:    :+:   */
+/*   ft_char_count_in_str.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzhdanov <rzhdanov@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/15 08:55:10 by rzhdanov          #+#    #+#             */
-/*   Updated: 2024/05/15 09:48:05 by rzhdanov         ###   ########.fr       */
+/*   Created: 2024/05/15 09:48:41 by rzhdanov          #+#    #+#             */
+/*   Updated: 2024/05/15 10:02:04 by rzhdanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_copy(char *dst, char *src, size_t size)
+size_t	ft_char_count_in_str(const char *s, const char c)
 {
-	size_t	i;
+	size_t	count;
 
-	i = 0;
-	if (src && size == 0)
+	count = 0;
+	while (*s)
 	{
-		while (src[i])
-		{
-			dst[i] = src[i];
-			i++;
-		}
+		if (*s == c)
+			count++;
+		s++;
 	}
-	else if (src)
-	{
-		size--;
-		while (i < size && src[i])
-		{
-			dst[i] = src[i];
-			i++;
-		}
-	}
-	dst[i] = '\0';
-	return (i);
+	return (count);
 }
