@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rzhdanov <rzhdanov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rzhdanov <rzhdanov@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 14:10:28 by rzhdanov          #+#    #+#             */
-/*   Updated: 2023/03/05 20:22:03 by rzhdanov         ###   ########.fr       */
+/*   Updated: 2024/08/12 05:52:32 by rzhdanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strrchr(const char*s, int c)
 {
-	unsigned long	counter;
-	char			target;
+	size_t	counter;
+	char	target;
 
 	counter = ft_strlen(s);
 	target = (char) c;

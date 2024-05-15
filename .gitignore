@@ -5,3 +5,4 @@ minishell
 *.o
 *.h.gch
 .DS_Store
+*.a
