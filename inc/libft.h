@@ -6,7 +6,7 @@
 /*   By: rzhdanov <rzhdanov@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 22:01:55 by rzhdanov          #+#    #+#             */
-/*   Updated: 2024/05/15 10:03:40 by rzhdanov         ###   ########.fr       */
+/*   Updated: 2024/05/15 10:09:03 by rzhdanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdio.h>
+# include <stddef.h>
 
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);

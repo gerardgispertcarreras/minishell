@@ -6,3 +6,4 @@ minishell
 *.h.gch
 .DS_Store
 *.a
+/libft/libft.h

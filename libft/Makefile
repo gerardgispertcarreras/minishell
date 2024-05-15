@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rzhdanov <rzhdanov <rzhdanov@student.42    +#+  +:+       +#+         #
+#    By: rzhdanov <rzhdanov@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/12 22:30:35 by rzhdanov          #+#    #+#              #
-#    Updated: 2024/05/05 21:12:42 by rzhdanov         ###   ########.fr        #
+#    Updated: 2024/05/15 10:06:05 by rzhdanov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c \
 		ft_strjoin.c ft_strtrim.c ft_itoa.c \
 		ft_split.c ft_strmapi.c ft_striteri.c \
 		ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
-		ft_putnbr_fd.c \
+		ft_putnbr_fd.c ft_ltoa.c ft_copy.c ft_char_count_in_str.c\
 
 OBJS = $(SRCS:.c=.o)
 RM = rm -rf

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggispert <ggispert@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: rzhdanov <rzhdanov@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 15:08:19 by ggispert          #+#    #+#             */
-/*   Updated: 2024/05/14 20:08:08 by rzhdanov         ###   ########.fr       */
+/*   Updated: 2024/05/15 10:07:25 by rzhdanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # include <stdarg.h>
 # include <stdbool.h>
 # include <fcntl.h>
+# include <stddef.h>
 
 # define MINISHELL "minishell: "
 

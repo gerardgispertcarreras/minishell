@@ -6,11 +6,11 @@
 /*   By: rzhdanov <rzhdanov@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 18:50:06 by rzhdanov          #+#    #+#             */
-/*   Updated: 2024/04/17 20:59:17 by rzhdanov         ###   ########.fr       */
+/*   Updated: 2024/05/15 10:06:52 by rzhdanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "libft.h"
 
 static int	long_len(long n)
 {
