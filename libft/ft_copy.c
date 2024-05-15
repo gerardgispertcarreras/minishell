@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_copy.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzhdanov <rzhdanov@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/17 14:10:28 by rzhdanov          #+#    #+#             */
-/*   Updated: 2024/05/15 06:36:17 by rzhdanov         ###   ########.fr       */
+/*   Created: 2024/05/15 06:37:27 by rzhdanov          #+#    #+#             */
+/*   Updated: 2024/05/15 08:09:09 by rzhdanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char*s, int c)
+size_t	ft_copy(char *dst, char *src, size_t size)
 {
-	size_t	counter;
-	char	target;
+	size_t	i;
 
-	counter = ft_strlen(s);
-	target = (char) c;
-	if (target == 0)
-		return ((char *)s + counter);
-	if (!counter)
-		return (NULL);
-	while (--counter)
+	i = 0;
+	if (src && size == 0)
 	{
-		if (s[counter] == target)
-			return ((char *) s + counter);
+		while (src[i])
+		{
+			dst[i] = src[i];
+			i++;
+		}
 	}
-	if (s[counter] == target)
-		return ((char *) s);
-	return (NULL);
+	else if (src)
+	{
+		size--;
+		while (i < size && src[i])
+		{
+			dst[i] = src[i];
+			i++;
+		}
+	}
+	dst[i] = '\0';
+	return (i);
 }
