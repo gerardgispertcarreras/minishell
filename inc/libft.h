@@ -6,7 +6,7 @@
 /*   By: rzhdanov <rzhdanov@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 22:01:55 by rzhdanov          #+#    #+#             */
-/*   Updated: 2024/05/15 10:09:03 by rzhdanov         ###   ########.fr       */
+/*   Updated: 2024/05/15 13:12:56 by rzhdanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,4 +72,7 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 size_t			ft_copy(char *dst, char *src, size_t size);
 size_t			ft_char_count_in_str(const char *s, const char c);
 char			*ft_ltoa(long n);
+void			ft_free_char_array(char **array);
+char			*ft_char_found_in_str(const char *s, const char c);
+char			*ft_strconcat(char *s1, char *s2, int free_s1, int free_s2);
 #endif
