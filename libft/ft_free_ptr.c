@@ -1,23 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_char_pos_in_str.c                               :+:      :+:    :+:   */
+/*   ft_free_ptr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzhdanov <rzhdanov@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/16 22:39:09 by rzhdanov          #+#    #+#             */
-/*   Updated: 2024/05/16 23:24:53 by rzhdanov         ###   ########.fr       */
+/*   Created: 2024/05/16 23:27:03 by rzhdanov          #+#    #+#             */
+/*   Updated: 2024/05/16 23:35:31 by rzhdanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_char_pos_in_str(char *s, char c)
+void	ft_free_ptr(void *ptr)
 {
-	int	i;
-
-	i = 0;
-	while (s[i] && s[i] != c)
-		i++;
-	return (i);
+	if (ptr)
+		free((void *) ptr);
+	ptr = NULL;
 }

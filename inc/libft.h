@@ -6,7 +6,7 @@
 /*   By: rzhdanov <rzhdanov@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 22:01:55 by rzhdanov          #+#    #+#             */
-/*   Updated: 2024/05/16 22:39:39 by rzhdanov         ###   ########.fr       */
+/*   Updated: 2024/05/16 23:35:55 by rzhdanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,7 @@ char			*ft_char_found_in_str(const char *s, const char c);
 char			*ft_strconcat(char *s1, char *s2, int free_s1, int free_s2);
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_char_pos_in_str(char *s, char c);
+void			ft_free_ptr(void *ptr);
+
 
 #endif
