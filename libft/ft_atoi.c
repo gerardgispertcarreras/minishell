@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rzhdanov <rzhdanov@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rzhdanov <rzhdanov@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/17 15:41:19 by rzhdanov          #+#    #+#             */
-/*   Updated: 2023/02/01 02:45:35 by r                ###   ########.fr       */
+/*   Updated: 2024/05/17 15:24:45 by rzhdanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ static int	ft_set_sign(char c)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
-	int	counter;
-	int	result;
-	int	sign;
+	int		counter;
+	long	result;
+	int		sign;
 
 	counter = 0;
 	result = 0;
@@ -45,5 +45,5 @@ int	ft_atoi(const char *str)
 		result += str[counter] - 48;
 		counter ++;
 	}
-	return (result * sign);
+	return ((long) result * sign);
 }
