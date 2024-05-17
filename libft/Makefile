@@ -6,7 +6,7 @@
 #    By: rzhdanov <rzhdanov@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/12 22:30:35 by rzhdanov          #+#    #+#              #
-#    Updated: 2024/05/17 18:06:11 by rzhdanov         ###   ########.fr        #
+#    Updated: 2024/05/17 18:20:35 by rzhdanov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c \
 		ft_free_char_array.c ft_char_found_in_str.c \
 		ft_strconcat.c ft_strcmp.c ft_char_pos_in_str.c \
 		ft_free_ptr.c ft_del_char_from_str.c \
-		ft_last_pos_of_char_in_str.c \
+		ft_last_pos_of_char_in_str.c ft_replace_char_in_str.c \
 
 
 OBJS = $(SRCS:.c=.o)

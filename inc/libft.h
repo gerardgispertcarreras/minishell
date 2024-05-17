@@ -6,7 +6,7 @@
 /*   By: rzhdanov <rzhdanov@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/10 22:01:55 by rzhdanov          #+#    #+#             */
-/*   Updated: 2024/05/17 18:01:50 by rzhdanov         ###   ########.fr       */
+/*   Updated: 2024/05/17 18:20:22 by rzhdanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,6 @@ int				ft_char_pos_in_str(char *s, char c);
 void			ft_free_ptr(void *ptr);
 char			*ft_del_char_from_str(char *s, char c);
 int				ft_last_pos_of_char_in_str(char *s, char c);
+size_t			ft_replace_char_in_str(char *s, char c_replace, char c_with);
 
 #endif
