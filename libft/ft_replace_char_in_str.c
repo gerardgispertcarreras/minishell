@@ -6,7 +6,7 @@
 /*   By: rzhdanov <rzhdanov@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/17 18:19:03 by rzhdanov          #+#    #+#             */
-/*   Updated: 2024/05/17 19:15:32 by rzhdanov         ###   ########.fr       */
+/*   Updated: 2024/05/17 19:21:06 by rzhdanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,5 @@ size_t	ft_replace_char_in_str(char *s, char c_replace, char c_with)
 		}
 		s++;
 	}
+	return (count);
 }
