@@ -1,19 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_last_pos_of_char_in_str.c                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzhdanov <rzhdanov@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/10 22:24:51 by rzhdanov          #+#    #+#             */
-/*   Updated: 2024/05/17 17:18:38 by rzhdanov         ###   ########.fr       */
+/*   Created: 2024/05/17 17:25:39 by rzhdanov          #+#    #+#             */
+/*   Updated: 2024/05/17 18:02:09 by rzhdanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl_fd(int fd, char *s)
+int	ft_last_pos_of_char_in_str(char *s, char c)
 {
-	ft_putstr_fd(fd, s);
-	write(fd, "\n", 1);
+	int	i;
+
+	i = ft_strlen(s);
+	while (i >= 0)
+	{
+		if (s[i] == c)
+			return (i);
+		i--;
+	}
+	return (i);
 }
