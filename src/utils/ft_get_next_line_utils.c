@@ -1,37 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_get_next_line_utils.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzhdanov <rzhdanov@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/01 12:58:49 by rzhdanov          #+#    #+#             */
-/*   Updated: 2024/05/19 18:49:04 by rzhdanov         ###   ########.fr       */
+/*   Created: 2023/04/14 21:56:26 by rzhdanov          #+#    #+#             */
+/*   Updated: 2024/05/19 18:50:16 by rzhdanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../minishell.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	*free_str(char **str)
 {
-	size_t	size;
-	size_t	i;
-	size_t	j;
-	char	*result;
-
-	size = ft_strlen(s1) + ft_strlen(s2);
-	result = (char *) malloc (sizeof(char) * (size + 1));
-	if (!result)
-		return (NULL);
-	i = 0;
-	while (s1[i])
-	{
-		result[i] = s1[i];
-		i ++;
-	}
-	j = 0;
-	while (s2[j])
-		result[i ++] = s2[j ++];
-	result[i] = '\0';
-	return (result);
+	free(*str);
+	*str = NULL;
+	return (NULL);
 }
