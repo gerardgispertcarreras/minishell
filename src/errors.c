@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   errors.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggispert <ggispert@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: rzhdanov <rzhdanov@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 15:06:46 by ggispert          #+#    #+#             */
-/*   Updated: 2024/05/02 15:12:10 by ggispert         ###   ########.fr       */
+/*   Updated: 2024/05/19 15:24:15 by rzhdanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	_open(char *file, char wr)
 	else
 		fd = open(file, O_RDONLY);
 	if (fd == -1)
-		ft_error(EXIT_FAILURE, MINISHELL, file);
+		ft_error(EXIT_FAILURE, PROMPT, file);
 	return (fd);
 }
 
@@ -35,8 +35,8 @@ void	_close(int fd)
 	{
 		fd_string = ft_itoa(fd);
 		if (fd_string == NULL)
-			ft_custom_error(EXIT_FAILURE, MINISHELL, MALLOCERR, NULL);
-		ft_error(EXIT_FAILURE, MINISHELL, fd_string);
+			ft_custom_error(EXIT_FAILURE, PROMPT, "-100\0", NULL);
+		ft_error(EXIT_FAILURE, PROMPT, fd_string);
 	}
 }
 

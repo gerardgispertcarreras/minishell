@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipes.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ggispert <ggispert@student.42barcelona.    +#+  +:+       +#+        */
+/*   By: rzhdanov <rzhdanov@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 14:00:33 by ggispert          #+#    #+#             */
-/*   Updated: 2024/05/02 14:40:09 by ggispert         ###   ########.fr       */
+/*   Updated: 2024/05/19 15:16:11 by rzhdanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,12 @@
 int	*make_pipe(void)
 {
 	int	*pipe_fd;
-	int 
 
 	pipe_fd = (int *)malloc(sizeof(int) * 2);
 	if (pipe_fd == NULL)
-		;//ERROR allocating memory
+		return NULL;
 	if (pipe(pipe_fd) == -1)
-		;//ERROR opening pipe
+		return NULL;
 	return pipe_fd;
 }
 
