@@ -6,7 +6,7 @@
 #    By: rzhdanov <rzhdanov@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/17 17:44:31 by rzhdanov          #+#    #+#              #
-#    Updated: 2024/05/19 15:16:08 by rzhdanov         ###   ########.fr        #
+#    Updated: 2024/05/20 15:32:18 by rzhdanov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,27 +17,32 @@ OBJ_DIR = obj
 LIBFT_PATH = libft
 LIBFT = $(LIBFT_PATH)/libft.a
 INCLUDES = -I./inc
-
-SRCS = $(wildcard $(SRC_DIR)/*.c)
-OBJS = $(addprefix $(OBJ_DIR)/, $(notdir $(SRCS:.c=.o)))
-
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g -Iink
 RM = rm -rf
 
-all : 
+SRCS = 		main.c \
+			errors.c \
+			pipes.c \
+			utils.c \
+			signals/ft_signals.c \
+			utils/ft_get_next_line.c \
+			utils/ft_get_next_line_utils.c \
+
+OBJS = $(SRCS:%.c=$(OBJ_DIR)/%.o)
+
+all : $(LIBFT) $(NAME)
+	@echo "minishell executable is ready"
+
+$(LIBFT) :
 	@$(MAKE) -C $(LIBFT_PATH) -s
-	@$(MAKE) $(NAME) -s
-#@echo "minishell executable is ready"
 
-$(OBJ_DIR) :
-	mkdir -p $(OBJ_DIR)
+$(NAME) : $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -lreadline -o $(NAME)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(LIBFT) | $(OBJ_DIR)
-	$(CC) $(CFLAGS) -c $< -o $@ $(INCLUDES)
-
-$(NAME) : $(OBJS) $(LIBFT)
-	$(CC) $(CFLAGS) $(OBJS) -lreadline -o $@ $(INCLUDES)
+$(OBJS) : $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	@mkdir -p $(@D)
+	$(CC) -c $(CFLAGS) -I/usr/local/opt/readline/include/ -o $@ $<
 
 #$(LIBFT):
 #	$(MAKE) -C ./libft
@@ -45,13 +50,13 @@ $(NAME) : $(OBJS) $(LIBFT)
 re : fclean all
 
 clean :
-	$(RM) $(OBJ_DIR)
-	$(MAKE) clean -C ./libft -s
+	rm -fr $(OBJ_DIR)
+	$(MAKE) clean -C $(LIBFT_PATH) -s
 	@echo "clean command executed"
 
 fclean : clean
 	$(RM) $(NAME)
-	$(MAKE) fclean -C ./libft -s
+	$(MAKE) fclean -C $(LIBFT_PATH) -s
 	@echo "fclean command executed"
 
 .PHONY : clean fclean re all

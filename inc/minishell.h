@@ -6,7 +6,7 @@
 /*   By: rzhdanov <rzhdanov@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 15:08:19 by ggispert          #+#    #+#             */
-/*   Updated: 2024/05/19 15:24:33 by rzhdanov         ###   ########.fr       */
+/*   Updated: 2024/05/20 15:17:09 by rzhdanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,24 @@ with this version of minishell."
 /* === UTILS ===*/
 void	err_exit(const char *err_msg);
 int		is_invalid(char *str);
+
+// get_next_line.c
+void			*read_is_minus_one(char **line, char **buffer);
+size_t			new_line_position(char *buffer);
+char			*get_left_part(char *buffer, char *line);
+char			*get_right_part(char *buffer);
+char			*ft_get_next_line(int fd);
+
+// get_next_line_utils.c
+void			*free_str(char **str);
+
+/* === SIGNALS === */
+
+//ft_signals.c
+void			ft_set_parent_interactive(void);
+void			ft_set_parent_active(void);
+void			ft_set_parent_heredoc(void);
+void			ft_set_child_active(void);
 
 // Error handling functions
 int		_open(char *file, char wr);
