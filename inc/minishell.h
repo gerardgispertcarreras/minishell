@@ -6,7 +6,7 @@
 /*   By: rzhdanov <rzhdanov@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/02 15:08:19 by ggispert          #+#    #+#             */
-/*   Updated: 2024/05/20 15:17:09 by rzhdanov         ###   ########.fr       */
+/*   Updated: 2024/05/24 02:42:21 by rzhdanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,11 @@ void			ft_set_parent_interactive(void);
 void			ft_set_parent_active(void);
 void			ft_set_parent_heredoc(void);
 void			ft_set_child_active(void);
+
+//ft_signals_handler.c
+void			ft_parent_interactive_sigint(int sign);
+void			ft_parent_active_sigint(int sign);
+void			ft_parent_active_sigquit(int sign);
 
 // Error handling functions
 int		_open(char *file, char wr);

@@ -6,7 +6,7 @@
 #    By: rzhdanov <rzhdanov@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/17 17:44:31 by rzhdanov          #+#    #+#              #
-#    Updated: 2024/05/23 22:52:33 by rzhdanov         ###   ########.fr        #
+#    Updated: 2024/05/24 02:40:37 by rzhdanov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ SRCS = 		main.c \
 			pipes.c \
 			utils.c \
 			signals/ft_signals.c \
+			signals/ft_signal_handler.c \
 			utils/ft_get_next_line.c \
 			utils/ft_get_next_line_utils.c \
 
