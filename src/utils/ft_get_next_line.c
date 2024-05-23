@@ -6,11 +6,11 @@
 /*   By: rzhdanov <rzhdanov@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 15:12:26 by rzhdanov          #+#    #+#             */
-/*   Updated: 2024/05/19 18:50:26 by rzhdanov         ###   ########.fr       */
+/*   Updated: 2024/05/23 22:53:42 by rzhdanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../minishell.h"
+#include "../../inc/minishell.h"
 
 void	*read_is_minus_one(char **line, char **buffer)
 {

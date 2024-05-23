@@ -1,20 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_next_line_utils.c                           :+:      :+:    :+:   */
+/*   ft_signal_handler.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzhdanov <rzhdanov@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/14 21:56:26 by rzhdanov          #+#    #+#             */
-/*   Updated: 2024/05/23 22:54:02 by rzhdanov         ###   ########.fr       */
+/*   Created: 2024/05/23 22:54:09 by rzhdanov          #+#    #+#             */
+/*   Updated: 2024/05/24 02:38:31 by rzhdanov         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/minishell.h"
 
-void	*free_str(char **str)
+void	ft_parent_interactive_sigint(int sign)
 {
-	free(*str);
-	*str = NULL;
-	return (NULL);
+	if (sign == SIGINT)
+	{
+		write(1, "\n", 1);
+		rl_replace_line("", 0);
+		rl_on_new_line();
+		rl_redisplay();
+	}
+}
+
+void	ft_parent_active_sigint(int sign)
+{
+	if (sign == SIGINT)
+	{
+		write(1, "\n", 1);
+		rl_replace_line("", 0);
+	}
+}
+
+void	ft_parent_active_sigquit(int sign)
+{
+	if (sign == SIGQUIT)
+	{
+		ft_putstr_fd(1, "Quit\n");
+	}
 }

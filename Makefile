@@ -6,7 +6,7 @@
 #    By: rzhdanov <rzhdanov@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/17 17:44:31 by rzhdanov          #+#    #+#              #
-#    Updated: 2024/05/20 15:32:18 by rzhdanov         ###   ########.fr        #
+#    Updated: 2024/05/23 22:52:33 by rzhdanov         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,6 @@ clean :
 fclean : clean
 	$(RM) $(NAME)
 	$(MAKE) fclean -C $(LIBFT_PATH) -s
-	@echo "fclean command executed"
+	@echo "fclean command executed" 
 
 .PHONY : clean fclean re all
